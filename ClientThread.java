@@ -1,4 +1,4 @@
-package co2log;
+package orpLog;
 
 import java.io.*;
 import java.net.*;
@@ -26,13 +26,19 @@ public class ClientThread implements Runnable {
             writer.println("Please enter your User ID:");
             String userID = reader.readLine();
 
-            writer.println("Please enter your postcode:");
+            writer.println("Please enter your Postcode:");
             String postcode = reader.readLine();
+            
+            writer.println("Please enter the Temperature reading:");
+            float temp = reader.readLine();
+            
+            writer.println("Please enter your Acidity Level reading:");
+            int acidity = reader.readLine();
 
-            writer.println("Please enter CO2 concentration:");
-            float co2Concentration = Float.parseFloat(reader.readLine());
+            writer.println("Please enter Oxido-Reduction Potential (mV) reading:");
+            float orp = Float.parseFloat(reader.readLine());
 
-            ClientData data = new ClientData(userID, postcode, co2Concentration);
+            ClientData data = new ClientData(userID, postcode, temp, acidity, orp);
             server.logData(data);
             
             writer.println("Thank you! Your data has been logged.");

@@ -1,4 +1,4 @@
-package co2log;
+package orplog;
 
 import java.io.*;
 import java.net.*;
@@ -34,12 +34,22 @@ public class Client {
             System.out.println(reader.readLine()); 
             String postcode = scanner.nextLine();
             writer.println(postcode);
+
+            // Prompt user for tempurature reading and send to server
+            System.out.println(reader.readLine()); 
+            float temp = scanner.nextLine();
+            writer.println(temp);
+
+            // Prompt user for pH level and send to server
+            System.out.println(reader.readLine()); 
+            int acidity = scanner.nextLine();
+            writer.println(acidity);
             
 
-            // Prompt user for CO2 concentration and send to server
+            // Prompt user for oxido-reduction potential and send to server
             System.out.println(reader.readLine());
-            float co2Concentration = Float.parseFloat(scanner.nextLine());
-            writer.println(co2Concentration);
+            float orp = Float.parseFloat(scanner.nextLine());
+            writer.println(orp);
             
 
         } catch (IOException e) {

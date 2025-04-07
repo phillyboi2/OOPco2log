@@ -9,7 +9,7 @@ import java.text.SimpleDateFormat;
 public class Server {
     private int port; // port number where the server will be
     private String csvFilePath = "log.csv"; // path to csv to log the data
-    private ExecutorService threadPool = Executors.newFixedThreadPool(4); // threadpool to allow up to 4 clients simultaneously
+    private ExecutorService threadPool = Executors.newFixedThreadPool(1); // threadpool to allow up to 1 client
 
     // Initialise the server port
     public Server(int port) {
